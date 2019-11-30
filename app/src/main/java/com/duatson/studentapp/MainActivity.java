@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
 
@@ -13,10 +17,12 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new DashboardFragment())
+                    .add(R.id.container, new ServiceDetailFragment())
                     .commit();
         }
     }

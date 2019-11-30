@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Student App</string>
+    <string name="welcome">Welcome</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="register">Đăng ký</string>
+    <string name="service_currency">đ</string>
+    <string name="service_contact_title">Mọi thắc mắc xin liên hệ</string>
 </resources>
