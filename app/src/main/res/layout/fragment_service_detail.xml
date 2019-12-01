@@ -20,6 +20,7 @@
                 android:layout_height="@dimen/service_detail_cover_image_height">
 
                 <ImageView
+                    android:id="@+id/ivServiceThumbnail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
