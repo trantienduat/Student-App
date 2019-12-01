@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".RequestDetailFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:background="@color/primaryColor"
+        >
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_margin="5dp"
+        android:layout_weight=".1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem chi tiết yêu cầu"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight=".8"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_refresh"
+            android:layout_margin="5dp"
+            android:layout_weight=".1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Xin cấp bảng điểm"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Xin cấp bảng điểm để thêm vào hồ sơ xin việc"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Gửi bởi: Nguyen Anh Quoc Trin"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Ngày chỉ định: 17-Jul-2019"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text="Ngày hoàn thành: Today, 6:17"
+            />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false"
+        android:layout_margin="10dp"
+        >
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryColor"
+            android:weightSum="1"
+            android:layout_margin="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chi tiết"
+                android:layout_weight="1"
+                android:textSize="23dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Số ngày thực hiện"
+                android:layout_width="350dp"
+                android:textStyle="bold"
+                android:layout_weight=".5"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:layout_weight=".5"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TextView android:layout_span="2" android:layout_height="1px"
+            android:layout_width="match_parent" android:text=""
+            android:background="@color/design_default_color_primary_dark">
+        </TextView>
+        <TableRow
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày bắt đầu"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_weight=".5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17-Jul-2019"
+                android:textSize="18dp"
+                android:layout_weight=".5"
+                android:textStyle="bold" />
+        </TableRow>
+        <TextView android:layout_span="2" android:layout_height="1px"
+            android:layout_width="match_parent" android:text=""
+            android:background="@color/design_default_color_primary_dark">
+        </TextView>
+        <TableRow
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày kết thúc"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_weight=".5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20-Jul-2019"
+                android:layout_weight=".5"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </TableRow>
+        <TextView android:layout_span="2" android:layout_height="1px"
+            android:layout_width="match_parent" android:text=""
+            android:background="@color/design_default_color_primary_dark">
+        </TextView>
+        <TableRow
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Lịch sử thực thi"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_weight=".5"/>
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yêu cầu đã được chỉ định cho TriHK. Yêu cầu đã được xác nhận. Yêu cầu đã được hoàn thành."
+                android:layout_weight=".5"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.button.MaterialButton
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:text="Đánh giá"
+        />
+
+</LinearLayout>

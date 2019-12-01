@@ -12,4 +12,12 @@
     <!-- Ripple Effect -->
     <color name="colorPressed">#666666</color>
     <color name="colorNotPress">#999999</color>
+
+    <color name="faceColor">#f6b93c</color>
+    <color name="eyesColor">#000000</color>
+    <color name="tongueColor">#c32925</color>
+    <color name="mouthColor">#000000</color>
+
+    <color name="rating_inactive">#929292</color>
+    <color name="rating_active">#f8b83b</color>
 </resources>

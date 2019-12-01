@@ -6,4 +6,7 @@
     <string name="register">Đăng ký</string>
     <string name="service_currency">đ</string>
     <string name="service_contact_title">Mọi thắc mắc xin liên hệ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
