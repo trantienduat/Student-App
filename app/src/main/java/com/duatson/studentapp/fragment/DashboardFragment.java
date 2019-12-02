@@ -1,4 +1,4 @@
-package com.duatson.studentapp;
+package com.duatson.studentapp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.duatson.studentapp.R;
+
 
 public class DashboardFragment extends Fragment {
 
@@ -17,7 +19,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.dashboard_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
 
         return view;

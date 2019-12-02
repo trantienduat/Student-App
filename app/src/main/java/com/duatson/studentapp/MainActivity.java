@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
+import com.duatson.studentapp.fragment.ServicesListFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
 
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new ServiceDetailFragment())
+                    .add(R.id.container, new ServicesListFragment())
                     .commit();
         }
     }
