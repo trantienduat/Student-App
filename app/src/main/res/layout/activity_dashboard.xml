@@ -36,6 +36,7 @@
             />
     </LinearLayout>
     <ImageView
+        android:id="@+id/imgProfile"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:src="@drawable/user"
@@ -264,6 +265,7 @@
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:id="@+id/cvViewMore"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"
