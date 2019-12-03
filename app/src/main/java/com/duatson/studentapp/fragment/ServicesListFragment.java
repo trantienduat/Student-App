@@ -42,6 +42,16 @@ public class ServicesListFragment extends Fragment {
         List<Service> services = new ArrayList<>();
         services.add(new Service("1234", "Service 1"));
         services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("12344", "Service 2"));
+
+        services.get(1).setDesctiption("this is a long text you can read it for more information, and help you understand about this component");
 
         ServiceListAdapter serviceListAdapter = new ServiceListAdapter(this.getActivity(), services);
         lvServicesList.setAdapter(serviceListAdapter);

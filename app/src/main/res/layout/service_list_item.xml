@@ -11,8 +11,10 @@
         android:minHeight="150dp"
         style="@style/Widget.MaterialComponents.CardView"
         app:cardCornerRadius="10dp"
-        android:layout_margin="@dimen/grid_spacing"
-        android:background="?selectableItemBackground">
+        android:layout_marginBottom="@dimen/grid_spacing"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
