@@ -1,4 +1,4 @@
-package com.duatson.studentapp;
+package com.duatson.studentapp.fragment;
 
 
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.duatson.studentapp.R;
 
 
 /**
@@ -37,13 +39,6 @@ public class ServiceDetailFragment extends Fragment {
     }
 
     private void setLvContact(View view) {
-        String[] name = {"Apple", "Banana", "Orange"};
-        String[] info = {"Great", "Awesome", "Perfect"};
-        Integer[] img = {R.drawable.ic_arrow_back, R.drawable.ic_menu, R.drawable.ic_send};
-
-        CustomListAdapter customList = new CustomListAdapter(getActivity(), name, info, img);
-        lvContact = view.findViewById(R.id.lvContact);
-        lvContact.setAdapter(customList);
     }
 
 }
