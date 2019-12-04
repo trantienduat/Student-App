@@ -30,7 +30,6 @@ dependencies {
     api 'com.google.android.material:material:1.2.0-alpha02'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.volley:volley:1.1.1'
-    implementation project(':smileyrating')
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     // implementation 'com.google.firebase:firebase-auth:19.2.0'

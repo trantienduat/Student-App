@@ -11,11 +11,11 @@ public class FirebaseDb {
     }
 
     public static DatabaseReference makeDbRef(String path) {
-        if (path != null) {
-            return database.getReference(path);
-        } else {
-            return database.getReference();
-        }
+        return database.getReference(path);
+    }
+
+    public static DatabaseReference makeDbRef() {
+        return database.getReference();
     }
 
 }

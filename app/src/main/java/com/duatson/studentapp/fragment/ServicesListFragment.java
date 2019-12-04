@@ -4,6 +4,8 @@ package com.duatson.studentapp.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +24,7 @@ import java.util.List;
  */
 public class ServicesListFragment extends Fragment {
 
-    ListView lvServicesList;
+    private ListView lvServicesList;
 
     public ServicesListFragment() {
         // Required empty public constructor
@@ -37,10 +39,19 @@ public class ServicesListFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_services_list, container, false);
         View view = inflater.inflate(R.layout.fragment_services_list, container, false);
 
+        initServiceData(view);
+
+
+
+        return view;
+    }
+
+    private void initServiceData(View view) {
         lvServicesList = view.findViewById(R.id.lvServicesList);
 
         List<Service> services = new ArrayList<>();
         services.add(new Service("1234", "Service 1"));
+        services.add(new Service("12344", "Service 2"));
         services.add(new Service("12344", "Service 2"));
         services.add(new Service("12344", "Service 2"));
         services.add(new Service("12344", "Service 2"));
@@ -55,8 +66,5 @@ public class ServicesListFragment extends Fragment {
 
         ServiceListAdapter serviceListAdapter = new ServiceListAdapter(this.getActivity(), services);
         lvServicesList.setAdapter(serviceListAdapter);
-
-        return view;
     }
-
 }
