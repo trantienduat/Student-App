@@ -10,9 +10,13 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.duatson.studentapp.R;
+import com.duatson.studentapp.adapter.CategoryGridAdapter;
 import com.duatson.studentapp.adapter.ServiceListAdapter;
 import com.duatson.studentapp.model.Service;
 
@@ -24,7 +28,11 @@ import java.util.List;
  */
 public class ServicesListFragment extends Fragment {
 
-    private ListView lvServicesList;
+    // private ListView lvServicesList;
+    private GridView gvCatDocs;
+    private GridView gvCatLearn;
+
+    private List<Service> services;
 
     public ServicesListFragment() {
         // Required empty public constructor
@@ -39,32 +47,37 @@ public class ServicesListFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_services_list, container, false);
         View view = inflater.inflate(R.layout.fragment_services_list, container, false);
 
+        gvCatDocs = view.findViewById(R.id.gvCatDocs);
+        gvCatLearn = view.findViewById(R.id.gvCatLearn);
+        services = new ArrayList<>();
+
         initServiceData(view);
 
-
+        gvCatDocs.setOnItemClickListener(serviceItemCLickDocs);
 
         return view;
     }
 
     private void initServiceData(View view) {
-        lvServicesList = view.findViewById(R.id.lvServicesList);
+//        lvServicesList = view.findViewById(R.id.lvServicesList);
 
-        List<Service> services = new ArrayList<>();
-        services.add(new Service("1234", "Service 1"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
-        services.add(new Service("12344", "Service 2"));
+        services.add(new Service("1", "Service 123", "This is description", 1, "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-512.png", null));
+        services.add(new Service("12344", "Service 2", "", 0, "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/pencil-512.png", null));
 
-        services.get(1).setDesctiption("this is a long text you can read it for more information, and help you understand about this component");
 
-        ServiceListAdapter serviceListAdapter = new ServiceListAdapter(this.getActivity(), services);
-        lvServicesList.setAdapter(serviceListAdapter);
+
+        CategoryGridAdapter categoryDocsGridAdapter = new CategoryGridAdapter(getActivity(), services);
+        gvCatDocs.setAdapter(categoryDocsGridAdapter);
+
+        gvCatLearn.setAdapter(categoryDocsGridAdapter);
+
     }
+
+    private GridView.OnItemClickListener serviceItemCLickDocs = new GridView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Service service = services.get(position);
+            Toast.makeText(getContext(), "You Clicked " + service.getName(), Toast.LENGTH_SHORT).show();
+        }
+    };
 }

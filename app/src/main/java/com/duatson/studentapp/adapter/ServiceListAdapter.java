@@ -35,13 +35,13 @@ public class ServiceListAdapter extends ArrayAdapter<Service> {
 
         View viewItem = inflater.inflate(R.layout.service_list_item, null, true);
 
-        MaterialCardView cvSurface = viewItem.findViewById(R.id.serviceItemSurface);
-        TextView tvServiceItemTitle = viewItem.findViewById(R.id.tvServiceItemTitle);
-        TextView tvServiceItemDescription = viewItem.findViewById(R.id.tvServiceItemDescription);
-
-        Service service = services.get(position);
-        tvServiceItemTitle.setText(service.getName());
-        tvServiceItemDescription.setText(service.getDesctiption());
+//        MaterialCardView cvSurface = viewItem.findViewById(R.id.serviceItemSurface);
+//        TextView tvServiceItemTitle = viewItem.findViewById(R.id.tvServiceItemTitle);
+//        TextView tvServiceItemDescription = viewItem.findViewById(R.id.tvServiceItemDescription);
+//
+//        Service service = services.get(position);
+//        tvServiceItemTitle.setText(service.getName());
+//        tvServiceItemDescription.setText(service.getDesctiption());
 
         return viewItem;
     }

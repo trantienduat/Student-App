@@ -27,16 +27,76 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="606dp"
-            android:layout_margin="@dimen/grid_spacing"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/grid_spacing">
 
-            <ListView
-                android:id="@+id/lvServicesList"
+            <EditText
+                android:id="@+id/edSearchBar"
                 android:layout_width="match_parent"
-                android:layout_height="69dp"
-                android:layout_marginBottom="60dp"
-                android:divider="@color/secondaryTextColor" />
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/grid_spacing"
+                android:layout_marginRight="@dimen/grid_spacing"
+                android:background="@drawable/rounded_edittext"
+                android:drawableRight="@drawable/ic_search"
+                android:hint="Tìm kiếm thông tin..."
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/grid_spacing">
+
+            <View style="@style/Divider" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Học Tập"
+                android:textAppearance="?attr/textAppearanceHeadline5"/>
+            <View style="@style/Divider" />
+
+            <GridView
+                android:id="@+id/gvCatLearn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:columnWidth="60dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="@dimen/grid_spacing"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:layout_margin="@dimen/grid_spacing"/>
+
+            <View style="@style/Divider" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Văn bản"
+                android:textAppearance="?attr/textAppearanceHeadline5"/>
+            <View style="@style/Divider" />
+
+            <GridView
+                android:id="@+id/gvCatDocs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:columnWidth="60dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="@dimen/grid_spacing"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:layout_margin="@dimen/grid_spacing"/>
+
+
+<!--            <ListView-->
+<!--                android:id="@+id/lvServicesList"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="60dp"-->
+<!--                android:divider="@color/secondaryTextColor" />-->
 
         </LinearLayout>
 

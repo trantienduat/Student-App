@@ -7,6 +7,7 @@ public class Service {
     private String name;
     private String desctiption;
     private double fee;
+    private String icon;
     private Map<String, String> contact;
 
     public Service() {
@@ -16,6 +17,15 @@ public class Service {
     public Service(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Service(String id, String name, String desctiption, double fee, String icon, Map<String, String> contact) {
+        this.id = id;
+        this.name = name;
+        this.desctiption = desctiption;
+        this.fee = fee;
+        this.icon = icon;
+        this.contact = contact;
     }
 
     public String getId() {
@@ -48,6 +58,14 @@ public class Service {
 
     public void setFee(double fee) {
         this.fee = fee;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public Map<String, String> getContact() {
