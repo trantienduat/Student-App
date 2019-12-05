@@ -21,7 +21,7 @@ import android.widget.Toast;
  */
 public class RegisterFragment extends Fragment {
 
-    private Toolbar toolbar;
+//    private Toolbar toolbar;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -35,25 +35,25 @@ public class RegisterFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_register, container, false);
         View view = inflater.inflate(R.layout.fragment_register, container, false);
 
-        setUpTopToolBar(view);
+//        setUpTopToolBar(view);
 
-        toolbar.setNavigationOnClickListener(onClickToBack);
+//        toolbar.setNavigationOnClickListener(onClickToBack);
 
         return view;
     }
 
-    private void setUpTopToolBar(View view) {
-        toolbar = view.findViewById(R.id.app_top_bar);
+//    private void setUpTopToolBar(View view) {
+//        toolbar = view.findViewById(R.id.app_top_bar);
 //        AppCompatActivity activity = (AppCompatActivity) getActivity();
 //        if (activity != null) {
 //            activity.setSupportActionBar(toolbar);
 //        }
-    }
+//    }
 
-    private Toolbar.OnClickListener onClickToBack = new Toolbar.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            getActivity().getSupportFragmentManager().popBackStack();
-        }
-    };
+//    private Toolbar.OnClickListener onClickToBack = new Toolbar.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            getActivity().getSupportFragmentManager().popBackStack();
+//        }
+//    };
 }

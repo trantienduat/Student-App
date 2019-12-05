@@ -1,6 +1,7 @@
 package com.duatson.studentapp.fragment;
 
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ public class ServiceDetailFragment extends Fragment {
 
     private ListView lvContact;
     private MaterialButton btnRegister;
+    private ImageView imgClose;
 
     private BottomSheetBehavior bottomSheetBehavior;
 
@@ -46,7 +50,6 @@ public class ServiceDetailFragment extends Fragment {
         btnRegister = view.findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(registerCLicked);
 
-
         setLvContact(view);
 
         return view;
@@ -58,8 +61,21 @@ public class ServiceDetailFragment extends Fragment {
     private View.OnClickListener registerCLicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            NavigationHost navigationHost = (NavigationHost) getActivity();
-            navigationHost.navigateTo(new RegisterFragment(), true);
+//            NavigationHost navigationHost = (NavigationHost) getActivity();
+//            navigationHost.navigateTo(new RegisterFragment(), true);
+
+            //load dialog
+            final Dialog registerDialog  = new Dialog(getContext());
+            registerDialog.setContentView(R.layout.fragment_register);
+            imgClose = registerDialog.findViewById(R.id.imgClose);
+            imgClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    registerDialog.dismiss();
+                }
+            });
+
+            registerDialog.show();
         }
     };
 
