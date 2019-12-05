@@ -21,4 +21,6 @@
     <color name="rating_inactive">#929292</color>
     <color name="rating_active">#f8b83b</color>
     <color name="input_background">#F3F2F2</color>
+
+    <color name="whiteColor">#ffffff</color>
 </resources>

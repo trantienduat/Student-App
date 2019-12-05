@@ -11,64 +11,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/secondaryTextColor">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/app_top_bar"
+                style="@style/Widget.StudentApp.Toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:title="@string/services_list" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_arrow_back"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?selectableItemBackground"
-                    android:padding="@dimen/grid_spacing"
-                    android:onClick="clickToBack"
-                    tools:ignore="OnClick"
-                    android:layout_marginRight="@dimen/grid_spacing" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                    app:boxCornerRadiusTopStart="30dp"
-                    app:boxCornerRadiusTopEnd="30dp"
-                    app:boxCornerRadiusBottomEnd="30dp"
-                    app:boxCornerRadiusBottomStart="30dp"
-                    app:endIconMode="clear_text">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:hint="@string/search"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="225dp"
+            android:layout_height="606dp"
             android:layout_margin="@dimen/grid_spacing"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@string/services_list"
-                android:textAppearance="?attr/textAppearanceHeadline5" />
 
             <ListView
                 android:id="@+id/lvServicesList"

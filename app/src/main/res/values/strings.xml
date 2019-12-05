@@ -11,4 +11,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="services_list">Danh sách các dịch vụ</string>
     <string name="search">Tìm kiếm</string>
+    <string name="register_service">Đăng ký dịch vụ</string>
+    <string name="send">Gửi</string>
 </resources>
