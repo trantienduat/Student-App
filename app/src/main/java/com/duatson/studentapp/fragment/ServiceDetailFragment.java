@@ -3,6 +3,7 @@ package com.duatson.studentapp.fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -45,6 +46,7 @@ public class ServiceDetailFragment extends Fragment {
     private ExpandableHeightListView lvContact;
     private MaterialButton btnRegister;
     private List<Contact> contacts = new ArrayList<>();
+    private ImageView imgClose;
     private Service service;
 
     private BottomSheetBehavior bottomSheetBehavior;
@@ -137,8 +139,19 @@ public class ServiceDetailFragment extends Fragment {
     private View.OnClickListener registerCLicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            NavigationHost navigationHost = (NavigationHost) getActivity();
-            navigationHost.navigateTo(new RegisterFragment(), true);
+//            NavigationHost navigationHost = (NavigationHost) getActivity();
+//            navigationHost.navigateTo(new RegisterFragment(), true);
+            final Dialog registerDialog  = new Dialog(getContext());
+            registerDialog.setContentView(R.layout.fragment_register);
+            imgClose = registerDialog.findViewById(R.id.imgClose);
+            imgClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    registerDialog.dismiss();
+                }
+            });
+
+            registerDialog.show();
         }
     };
 

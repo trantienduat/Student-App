@@ -18,4 +18,5 @@
     <string name="cat_others">Mục khác</string>
     <string name="service_detail_description">Mô tả</string>
     <string name="cat_allowance">Trợ cấp</string>
+    <string name="note">Ghi chú</string>
 </resources>
