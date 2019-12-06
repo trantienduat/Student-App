@@ -53,7 +53,7 @@ public class ServicesListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_services_list, container, false);
 
         // Connect to firebase
-        firebaseDb = FirebaseDb.makeDbRef("services/docs");
+        firebaseDb = FirebaseDb.makeDbRef("Services/docs");
 
         gvCatDocs = view.findViewById(R.id.gvCatDocs);
         gvCatLearn = view.findViewById(R.id.gvCatLearn);
