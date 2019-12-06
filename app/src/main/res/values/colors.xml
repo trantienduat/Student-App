@@ -24,4 +24,14 @@
 
     <color name="whiteColor">#ffffff</color>
     <color name="outlineColor">#DDDCDC</color>
+
+    <color name="hex1">#0099CC</color>
+    <color name="hex2">#CCFFCC</color>
+    <color name="hex3">#66CCFF</color>
+    <color name="hex4">#003399</color>
+    
+    <color name="bluePigment">#3626A7</color>
+    <color name="blueBerry">#4392F1</color>
+    <color name="orangeCadmium">#EE8434</color>
+    <color name="amaranth">#ED2D54</color>
 </resources>
