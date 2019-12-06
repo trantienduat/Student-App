@@ -41,26 +41,26 @@ public class BottomNavigation extends Fragment {
         return view;
     }
 
-        private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()) {
-                    case R.id.profile:
-                        //toolbar.setTitle("Profile");
-                        navigationHost.navigateTo(new ProfileFragment(), true);
-                        return true;
-                    case R.id.dashboard:
-                        //toolbar.setTitle("Dashboard");
-                        navigationHost.navigateTo(new DashboardFragment(), true);
-                        return true;
-                    case R.id.filter1:
-                        navigationHost.navigateTo(new ServiceDetailFragment(), true);
-                        return true;
-                }
-
-                return false;
+            switch (item.getItemId()) {
+                case R.id.icProfile:
+                    //toolbar.setTitle("Profile");
+                    navigationHost.navigateTo(new ProfileFragment(), true);
+                    return true;
+                case R.id.icDashboard:
+                    //toolbar.setTitle("Dashboard");
+                    navigationHost.navigateTo(new DashboardFragment(), true);
+                    return true;
+                case R.id.icSearch:
+                    navigationHost.navigateTo(new ServicesListFragment(), true);
+                    return true;
             }
+
+            return false;
+        }
     };
 }

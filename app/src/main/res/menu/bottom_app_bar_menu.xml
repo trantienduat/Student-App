@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/dashboard"
-        android:icon="@drawable/ic_menu"
-        android:title="Filter"
+        android:id="@+id/icDashboard"
+        android:icon="@drawable/ic_home_24px"
+        android:title="Trang chủ"
         app:showAsAction="always" />
     <item
-        android:id="@+id/filter1"
-        android:icon="@drawable/ic_menu"
-        android:title="Filter"
+        android:id="@+id/icSearch"
+        android:icon="@drawable/ic_search_24px"
+        android:title="Tìm kiếm"
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_account"
-        android:title="Profile"
+        android:id="@+id/icProfile"
+        android:icon="@drawable/ic_account_circle_24px"
+        android:title="Cá nhân"
         app:showAsAction="always" />
 </menu>

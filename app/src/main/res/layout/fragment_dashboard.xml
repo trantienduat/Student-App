@@ -1,86 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".DashboardActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="@string/welcome"/>
+                android:orientation="vertical">
 
-            <TextView
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xin Chào Hoàng Sơn"
+                    android:textColor="@color/mouthColor"
+                    android:textSize="28dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thứ 7, ngày 30 tháng 11 năm 2019" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgProfile"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text=" Hoang Son"/>
-
+                android:layout_height="55dp"
+                android:src="@drawable/user" />
         </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="160dp"
-                android:layout_height="180dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="70dp"
-                app:cardBackgroundColor="?attr/colorPrimaryDark"
-                app:cardCornerRadius="4dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableRight="@drawable/ic_search"
+            android:hint="Tìm kiếm thông tin..."
+            android:padding="10dp"></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/input_background"
+            android:padding="5sp"
+            android:text="  Yêu cầu trong tuần"
+            android:textColor="@color/mouthColor"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <com.duatson.studentapp.application.ExpandableHeightGridView
+                android:id="@+id/gvCatLearn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/grid_spacing"
+                android:columnWidth="60dp"
+                android:gravity="center"
+                android:horizontalSpacing="@dimen/grid_spacing"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="@dimen/grid_spacing" />
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/input_background"
+            android:padding="5sp"
+            android:text="  Các yêu cầu của bạn"
+            android:textColor="@color/mouthColor"
+            android:textSize="27dp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:background="#FFFFFF"
-                    android:orientation="vertical"
-                    android:padding="8dp">
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="2dp"
-                        android:text="This is title"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="2dp"
-                        android:text="description is amazing thing in this world"
-                        android:textAppearance="?attr/textAppearanceBody2" />
+                        android:text="19/11/2019" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="2"
+                android:background="@color/design_default_color_primary_dark"
+                android:text=""></TextView>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19/11/2019" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="2"
+                android:background="@color/design_default_color_primary_dark"
+                android:text=""></TextView>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19/11/2019" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="2"
+                android:background="@color/design_default_color_primary_dark"
+                android:text=""></TextView>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19/11/2019" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="2"
+                android:background="@color/design_default_color_primary_dark"
+                android:text=""></TextView>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19/11/2019" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="2"
+                android:background="@color/design_default_color_primary_dark"
+                android:text=""></TextView>
+        </TableLayout>
 
     </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_app_bar_menu" />
-
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>
