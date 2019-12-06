@@ -4,26 +4,27 @@ package com.duatson.studentapp.fragment;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.duatson.studentapp.NavigationHost;
 import com.duatson.studentapp.R;
 import com.duatson.studentapp.RegisterFragment;
 import com.duatson.studentapp.adapter.ContactAdapter;
 import com.duatson.studentapp.application.ExpandableHeightListView;
+import com.duatson.studentapp.model.Contact;
 import com.duatson.studentapp.model.Service;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.button.MaterialButton;
+import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,15 +61,13 @@ public class ServiceDetailFragment extends Fragment {
         btnRegister.setOnClickListener(registerCLicked);
 
 
-        setLvContact(view);
-
         return view;
     }
 
     private Service getDataFromClick() {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            return (Service) bundle.getSerializable("service");
+            return (Service) bundle.getSerializable(ServicesListFragment.BUNDLE_KEY);
         }
         return null;
     }
@@ -83,15 +82,22 @@ public class ServiceDetailFragment extends Fragment {
             TextView tvServiceDescription = view.findViewById(R.id.tvServiceDescription);
             tvServiceDescription.setText(service.getDescription());
 
+            NumberFormat formatter = new DecimalFormat("#,###");
             TextView tvServiceFee = view.findViewById(R.id.tvServiceFee);
-            tvServiceFee.setText(String.format("%.2f", service.getFee()));
+            tvServiceFee.setText(formatter.format(service.getFee()));
+
+            ImageView ivServiceThumbnail = view.findViewById(R.id.ivServiceThumbnail);
+            Picasso.get().load(service.getThumbnail()).into(ivServiceThumbnail);
+
+            setLvContact();
         }
     }
 
-    private void setLvContact(View view) {
-        List<String> contacts = new ArrayList<>();
-        contacts.add("helper@helper.com");
-        contacts.add("1234567988");
+    private void setLvContact() {
+        List<Contact> contacts = new ArrayList<>();
+
+        contacts.add(new Contact(service.getEmail(), "Email", R.drawable.ic_email));
+        contacts.add(new Contact(service.getPhone(), "Phone", R.drawable.ic_phone));
 
         ContactAdapter contactAdapter = new ContactAdapter(getActivity(), contacts);
         lvContact.setAdapter(contactAdapter);

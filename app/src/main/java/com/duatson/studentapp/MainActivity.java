@@ -1,24 +1,15 @@
 package com.duatson.studentapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.duatson.studentapp.fragment.DashboardFragment;
-import com.duatson.studentapp.fragment.ProfileFragment;
-import com.duatson.studentapp.fragment.ServicesListFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
                     .beginTransaction()
                     .add(R.id.container, new DashboardFragment())
                     .commit();
+
+            System.out.println("Frame: " + getSupportFragmentManager().getBackStackEntryCount());
         }
     }
 

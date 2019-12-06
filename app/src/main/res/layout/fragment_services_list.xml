@@ -105,6 +105,46 @@
                 <!--                android:layout_marginBottom="60dp"-->
                 <!--                android:divider="@color/secondaryTextColor" />-->
 
+                <View style="@style/Divider" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/cat_allowance"
+                    android:textAppearance="?attr/textAppearanceHeadline5"/>
+                <View style="@style/Divider" />
+
+                <com.duatson.studentapp.application.ExpandableHeightGridView
+                    android:id="@+id/gvCatAllowance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:columnWidth="60dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="@dimen/grid_spacing"
+                    android:horizontalSpacing="@dimen/grid_spacing"
+                    android:layout_margin="@dimen/grid_spacing" />
+
+                <View style="@style/Divider" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/cat_others"
+                    android:textAppearance="?attr/textAppearanceHeadline5"/>
+                <View style="@style/Divider" />
+
+                <com.duatson.studentapp.application.ExpandableHeightGridView
+                    android:id="@+id/gvCatOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:columnWidth="60dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="@dimen/grid_spacing"
+                    android:horizontalSpacing="@dimen/grid_spacing"
+                    android:layout_margin="@dimen/grid_spacing" />
+
             </LinearLayout>
 
         </LinearLayout>

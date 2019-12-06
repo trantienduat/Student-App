@@ -15,4 +15,7 @@
     <string name="send">Gửi</string>
     <string name="cat_docs">Văn Bản</string>
     <string name="cat_learn">Học Tập</string>
+    <string name="cat_others">Mục khác</string>
+    <string name="service_detail_description">Mô tả</string>
+    <string name="cat_allowance">Trợ cấp</string>
 </resources>
