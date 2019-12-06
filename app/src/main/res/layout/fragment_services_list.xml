@@ -1,105 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.ServicesListFragment">
+    tools:context=".fragment.ServicesListFragment"
+    android:layout_marginBottom="58dp">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/app_top_bar"
-                style="@style/Widget.StudentApp.Toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_arrow_back"
-                app:title="@string/services_list" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/grid_spacing">
-
-            <EditText
-                android:id="@+id/edSearchBar"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="@dimen/grid_spacing"
-                android:layout_marginRight="@dimen/grid_spacing"
-                android:background="@drawable/rounded_edittext"
-                android:drawableRight="@drawable/ic_search"
-                android:hint="Tìm kiếm thông tin..."
-                android:padding="10dp" />
-
-        </LinearLayout>
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/grid_spacing">
+            android:orientation="vertical">
 
-            <View style="@style/Divider" />
-            <TextView
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/app_top_bar"
+                    style="@style/Widget.StudentApp.Toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/ic_arrow_back"
+                    app:title="@string/services_list" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/grid_spacing">
+
+                <EditText
+                    android:id="@+id/edSearchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="@dimen/grid_spacing"
+                    android:layout_marginRight="@dimen/grid_spacing"
+                    android:background="@drawable/rounded_edittext"
+                    android:drawableRight="@drawable/ic_search"
+                    android:hint="@string/search"
+                    android:padding="10dp"
+                    android:drawableEnd="@drawable/ic_search" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Học Tập"
-                android:textAppearance="?attr/textAppearanceHeadline5"/>
-            <View style="@style/Divider" />
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/grid_spacing">
 
-            <GridView
-                android:id="@+id/gvCatLearn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:columnWidth="60dp"
-                android:numColumns="auto_fit"
-                android:verticalSpacing="@dimen/grid_spacing"
-                android:horizontalSpacing="@dimen/grid_spacing"
-                android:layout_margin="@dimen/grid_spacing"/>
+                <View style="@style/Divider" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@string/cat_learn"
+                    android:textAppearance="?attr/textAppearanceHeadline5"/>
+                <View style="@style/Divider" />
 
-            <View style="@style/Divider" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Văn bản"
-                android:textAppearance="?attr/textAppearanceHeadline5"/>
-            <View style="@style/Divider" />
+                <com.duatson.studentapp.application.ExpandableHeightGridView
+                    android:id="@+id/gvCatLearn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:columnWidth="60dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="@dimen/grid_spacing"
+                    android:horizontalSpacing="@dimen/grid_spacing"
+                    android:layout_margin="@dimen/grid_spacing" />
 
-            <GridView
-                android:id="@+id/gvCatDocs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:columnWidth="60dp"
-                android:numColumns="auto_fit"
-                android:verticalSpacing="@dimen/grid_spacing"
-                android:horizontalSpacing="@dimen/grid_spacing"
-                android:layout_margin="@dimen/grid_spacing"/>
+                <View style="@style/Divider" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="@string/cat_docs"
+                    android:textAppearance="?attr/textAppearanceHeadline5"/>
+                <View style="@style/Divider" />
+
+                <com.duatson.studentapp.application.ExpandableHeightGridView
+                    android:id="@+id/gvCatDocs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:columnWidth="60dp"
+                    android:numColumns="auto_fit"
+                    android:verticalSpacing="@dimen/grid_spacing"
+                    android:horizontalSpacing="@dimen/grid_spacing"
+                    android:layout_margin="@dimen/grid_spacing"/>
 
 
-<!--            <ListView-->
-<!--                android:id="@+id/lvServicesList"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginBottom="60dp"-->
-<!--                android:divider="@color/secondaryTextColor" />-->
+                <!--            <ListView-->
+                <!--                android:id="@+id/lvServicesList"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginBottom="60dp"-->
+                <!--                android:divider="@color/secondaryTextColor" />-->
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
-</FrameLayout>
+</ScrollView>

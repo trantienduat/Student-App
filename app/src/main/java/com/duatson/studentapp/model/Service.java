@@ -1,14 +1,17 @@
 package com.duatson.studentapp.model;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class Service {
+public class Service implements Serializable {
     private String id;
     private String name;
-    private String desctiption;
+    private String description;
     private double fee;
     private String icon;
-    private Map<String, String> contact;
+    private String thumbnail;
+    private String email;
+    private String phone;
 
     public Service() {
         // empty constructor
@@ -19,13 +22,15 @@ public class Service {
         this.name = name;
     }
 
-    public Service(String id, String name, String desctiption, double fee, String icon, Map<String, String> contact) {
+    public Service(String id, String name, String description, double fee, String icon, String thumbnail, String email, String phone) {
         this.id = id;
         this.name = name;
-        this.desctiption = desctiption;
+        this.description = description;
         this.fee = fee;
         this.icon = icon;
-        this.contact = contact;
+        this.thumbnail = thumbnail;
+        this.email = email;
+        this.phone = phone;
     }
 
     public String getId() {
@@ -44,12 +49,12 @@ public class Service {
         this.name = name;
     }
 
-    public String getDesctiption() {
-        return desctiption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesctiption(String desctiption) {
-        this.desctiption = desctiption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getFee() {
@@ -68,11 +73,27 @@ public class Service {
         this.icon = icon;
     }
 
-    public Map<String, String> getContact() {
-        return contact;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setContact(Map<String, String> contact) {
-        this.contact = contact;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

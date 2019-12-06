@@ -4,18 +4,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseDb {
-    private static FirebaseDatabase database;
 
     public FirebaseDb() {
-        database = FirebaseDatabase.getInstance();
+        // empty
     }
 
     public static DatabaseReference makeDbRef(String path) {
-        return database.getReference(path);
+        return FirebaseDatabase.getInstance().getReference(path);
     }
 
     public static DatabaseReference makeDbRef() {
-        return database.getReference();
+        return FirebaseDatabase.getInstance().getReference();
     }
 
 }
