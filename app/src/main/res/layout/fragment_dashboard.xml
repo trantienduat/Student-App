@@ -9,17 +9,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/gradient"
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bluePigment"
             android:orientation="vertical"
-            android:paddingBottom="20sp"
-            android:paddingRight="20sp"
-            android:paddingLeft="20sp"
-            android:paddingTop="10sp">
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/app_top_bar"
+                style="@style/Widget.StudentApp.Toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="45sp"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:background="@drawable/gradient"
+                android:scrollbarStyle="insideInset"
+                app:titleTextColor="@color/whiteColor">
+
+                <TextView
+                    android:id="@+id/tvSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="32sp"
+                    android:background="@drawable/rounded_edittext"
+                    android:drawableRight="@drawable/ic_search_24px"
+                    android:drawableTint="@color/whiteColor"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/padding_medium"
+                    android:paddingRight="@dimen/padding_medium"
+                    android:text="Tìm kiếm thông tin..."
+                    android:textAppearance="@style/NormalText"
+                    android:textColor="@color/whiteColor" />
+            </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,14 +54,15 @@
 
                 <ImageView
                     android:id="@+id/imgProfile"
-                    android:layout_width="60sp"
-                    android:layout_height="60sp"
+                    android:layout_width="@dimen/padding_extra_large"
+                    android:layout_height="@dimen/padding_extra_large"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_medium"
                     android:src="@drawable/ic_student" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
                     android:orientation="vertical">
 
                     <TextView
@@ -43,9 +70,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Phạm Hoàng Sơn"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        android:textAppearance="@style/TitleText"
+                        android:textColor="@color/whiteColor" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -56,19 +82,19 @@
                             android:id="@+id/tvStdRollNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SE63285"
+                            android:text="SE123456"
+                            android:textAppearance="@style/MediumText"
                             android:textColor="@color/whiteColor"
-                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="5sp"
-                            android:layout_marginRight="5sp"
+                            android:layout_marginLeft="@dimen/margin_extra_small"
+                            android:layout_marginRight="@dimen/margin_extra_small"
                             android:text="-"
+                            android:textAppearance="@style/MediumText"
                             android:textColor="@color/whiteColor"
-                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -76,8 +102,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Kỹ Thuật Phần Mềm"
+                            android:textAppearance="@style/MediumText"
                             android:textColor="@color/whiteColor"
-                            android:textSize="18sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -87,47 +113,37 @@
                         android:layout_height="wrap_content"
                         android:text="Thứ 7, ngày 30 tháng 11 năm 2019"
                         android:textColor="@color/whiteColor"
-                        android:textSize="14sp" />
+                        android:textSize="11sp" />
                 </LinearLayout>
-
-
             </LinearLayout>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:layout_marginTop="20sp"
-                android:background="@drawable/rounded_edittext"
-                android:drawableRight="@drawable/ic_search_24px"
-                android:hint="Tìm kiếm thông tin..."
-                android:paddingLeft="20sp"
-                android:paddingRight="20sp"
-                android:textSize="16sp"></EditText>
+
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/blueBerry"
-            android:paddingLeft="20sp"
-            android:paddingTop="5sp"
-            android:paddingBottom="5sp"
+            android:background="#016EFD"
+            android:elevation="8sp"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_extra_small"
+            android:paddingBottom="@dimen/padding_extra_small"
             android:text="Yêu cầu trong tuần"
+            android:textAppearance="@style/MediumText"
             android:textColor="@color/whiteColor"
-            android:textSize="20sp"
             android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5sp">
+            android:background="@color/whiteColor"
+            android:padding="@dimen/padding_medium">
 
             <com.duatson.studentapp.application.ExpandableHeightGridView
                 android:id="@+id/gvServices"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/grid_spacing"
                 android:columnWidth="60dp"
                 android:gravity="center"
                 android:horizontalSpacing="@dimen/grid_spacing"
@@ -139,18 +155,66 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/blueBerry"
-            android:paddingLeft="20sp"
-            android:paddingTop="5sp"
-            android:paddingBottom="5sp"
+            android:background="#016EFD"
+            android:elevation="8sp"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_extra_small"
+            android:paddingBottom="@dimen/padding_extra_small"
             android:text="Các yêu cầu của bạn"
             android:textColor="@color/whiteColor"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/whiteColor"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_user" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cấp lại thẻ sinh viên"
+                        android:textColor="@color/mouthColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19/11/2019"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Đang xử lý"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View style="@style/Divider" />
 
             <TableRow
                 android:layout_width="match_parent"
@@ -174,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cấp lại thẻ sinh viên"
                         android:textColor="@color/mouthColor"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -191,7 +255,7 @@
                     android:gravity="center"
                     android:text="Đang xử lý"
                     android:textColor="@color/primaryColor"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -219,7 +283,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cấp lại thẻ sinh viên"
                         android:textColor="@color/mouthColor"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -236,7 +300,7 @@
                     android:gravity="center"
                     android:text="Đang xử lý"
                     android:textColor="@color/primaryColor"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -264,7 +328,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cấp lại thẻ sinh viên"
                         android:textColor="@color/mouthColor"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -281,7 +345,7 @@
                     android:gravity="center"
                     android:text="Đang xử lý"
                     android:textColor="@color/primaryColor"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </TableRow>
 
@@ -309,7 +373,7 @@
                         android:layout_height="wrap_content"
                         android:text="Cấp lại thẻ sinh viên"
                         android:textColor="@color/mouthColor"
-                        android:textSize="16sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -326,52 +390,7 @@
                     android:gravity="center"
                     android:text="Đang xử lý"
                     android:textColor="@color/primaryColor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </TableRow>
-
-            <View style="@style/Divider" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="40sp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_user" />
-
-                <LinearLayout
-                    android:layout_width="215dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10sp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cấp lại thẻ sinh viên"
-                        android:textColor="@color/mouthColor"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="19/11/2019"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Đang xử lý"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </TableRow>
 

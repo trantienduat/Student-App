@@ -2,10 +2,12 @@ package com.duatson.studentapp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import com.duatson.studentapp.adapter.CategoryGridAdapter;
 import com.duatson.studentapp.application.ExpandableHeightGridView;
 import com.duatson.studentapp.model.Service;
 import com.duatson.studentapp.network.FirebaseDb;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +32,7 @@ import java.util.List;
 public class DashboardFragment extends Fragment {
     private DatabaseReference firebaseDb;
     private ExpandableHeightGridView gvServices;
+    private TextView tvSearch;
 
     private List<Service> servicesCatDocs;
 
@@ -36,6 +40,16 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        tvSearch = view.findViewById(R.id.tvSearch);
+        tvSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ServicesListFragment servicesListFragment = new ServicesListFragment();
+                ((NavigationHost) getActivity()).navigateTo(servicesListFragment, true);
+            }
+        });
+
         // Connect to firebase
         firebaseDb = FirebaseDb.makeDbRef("Services/docs");
 
@@ -94,6 +108,5 @@ public class DashboardFragment extends Fragment {
             }
         });
     }
-
 
 }
