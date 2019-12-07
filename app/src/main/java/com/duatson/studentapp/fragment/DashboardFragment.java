@@ -2,17 +2,21 @@ package com.duatson.studentapp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.duatson.studentapp.MainActivity;
 import com.duatson.studentapp.NavigationHost;
 import com.duatson.studentapp.R;
 import com.duatson.studentapp.adapter.CategoryGridAdapter;
@@ -36,11 +40,33 @@ public class DashboardFragment extends Fragment {
 
     private List<Service> servicesCatDocs;
 
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setHasOptionsMenu(true);
+//    }
+//
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+//        inflater.inflate(R.menu.top_app_bar_menu_dashboard, menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//            if (id == R.id.icNotification) {
+//                NotificationFragment notificationFragment = new NotificationFragment();
+//                ((NavigationHost) getActivity()).navigateTo(notificationFragment, true);
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-
+        setHasOptionsMenu(true);
         tvSearch = view.findViewById(R.id.tvSearch);
         tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override

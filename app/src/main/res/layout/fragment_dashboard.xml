@@ -12,15 +12,10 @@
         android:background="@drawable/gradient"
         android:orientation="vertical">
 
-
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/padding_medium"
-            android:paddingTop="@dimen/padding_small"
-            android:paddingRight="@dimen/padding_medium"
-            android:paddingBottom="@dimen/padding_medium">
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/app_top_bar"
@@ -30,6 +25,7 @@
                 android:layout_marginBottom="@dimen/margin_small"
                 android:background="@drawable/gradient"
                 android:scrollbarStyle="insideInset"
+                app:menu="@menu/top_app_bar_menu_dashboard"
                 app:titleTextColor="@color/whiteColor">
 
                 <TextView
@@ -50,6 +46,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
                 android:orientation="horizontal">
 
                 <ImageView
