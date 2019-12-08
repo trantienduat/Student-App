@@ -1,14 +1,22 @@
 package com.duatson.studentapp.fragment;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,7 +45,8 @@ public class ServiceDetailFragment extends Fragment {
 
     private ExpandableHeightListView lvContact;
     private MaterialButton btnRegister;
-
+    private List<Contact> contacts = new ArrayList<>();
+    private ImageView imgClose;
     private Service service;
 
     private BottomSheetBehavior bottomSheetBehavior;
@@ -60,6 +69,33 @@ public class ServiceDetailFragment extends Fragment {
         btnRegister = view.findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(registerCLicked);
 
+        lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(contacts.get(position).getContent().equals("Email")){
+                    /* Create the Intent */
+                    final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+
+                    /* Fill it with Data */
+                    emailIntent.setType("plain/text");
+                    emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{service.getEmail()});
+
+                    /* Send it off to the Activity-Chooser */
+                    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                }else{
+                    String posted_by = service.getPhone();
+                    String uri = "tel:" + posted_by.trim() ;
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse(uri));
+                    startActivity(intent);
+                    if (getActivity().checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        startActivity(intent);
+                    }
+
+                }
+            }
+        });
 
         return view;
     }
@@ -94,11 +130,8 @@ public class ServiceDetailFragment extends Fragment {
     }
 
     private void setLvContact() {
-        List<Contact> contacts = new ArrayList<>();
-
         contacts.add(new Contact(service.getEmail(), "Email", R.drawable.ic_email));
         contacts.add(new Contact(service.getPhone(), "Phone", R.drawable.ic_phone));
-
         ContactAdapter contactAdapter = new ContactAdapter(getActivity(), contacts);
         lvContact.setAdapter(contactAdapter);
     }
@@ -106,8 +139,19 @@ public class ServiceDetailFragment extends Fragment {
     private View.OnClickListener registerCLicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            NavigationHost navigationHost = (NavigationHost) getActivity();
-            navigationHost.navigateTo(new RegisterFragment(), true);
+//            NavigationHost navigationHost = (NavigationHost) getActivity();
+//            navigationHost.navigateTo(new RegisterFragment(), true);
+            final Dialog registerDialog  = new Dialog(getContext());
+            registerDialog.setContentView(R.layout.fragment_register);
+            imgClose = registerDialog.findViewById(R.id.imgClose);
+            imgClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    registerDialog.dismiss();
+                }
+            });
+
+            registerDialog.show();
         }
     };
 
