@@ -141,17 +141,16 @@ public class ServiceDetailFragment extends Fragment {
         public void onClick(View v) {
 //            NavigationHost navigationHost = (NavigationHost) getActivity();
 //            navigationHost.navigateTo(new RegisterFragment(), true);
-            final Dialog registerDialog  = new Dialog(getContext());
-            registerDialog.setContentView(R.layout.fragment_register);
-            imgClose = registerDialog.findViewById(R.id.imgClose);
-            imgClose.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    registerDialog.dismiss();
-                }
-            });
-
-            registerDialog.show();
+//            final Dialog registerDialog  = new Dialog(getContext());
+//            registerDialog.setContentView(R.layout.fragment_register);
+//            imgClose = registerDialog.findViewById(R.id.imgClose);
+//            imgClose.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    registerDialog.dismiss();
+//                }
+//            });
+//            registerDialog.show();
         }
     };
 
