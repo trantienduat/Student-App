@@ -1,5 +1,6 @@
 package com.duatson.studentapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +21,12 @@ import androidx.fragment.app.Fragment;
 import com.duatson.studentapp.MainActivity;
 import com.duatson.studentapp.NavigationHost;
 import com.duatson.studentapp.R;
+import com.duatson.studentapp.RequestDetailFragment;
 import com.duatson.studentapp.adapter.CategoryGridAdapter;
+import com.duatson.studentapp.adapter.RequestListAdapter;
 import com.duatson.studentapp.application.ExpandableHeightGridView;
+import com.duatson.studentapp.application.ExpandableHeightListView;
+import com.duatson.studentapp.model.Request;
 import com.duatson.studentapp.model.Service;
 import com.duatson.studentapp.network.FirebaseDb;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -39,6 +45,10 @@ public class DashboardFragment extends Fragment {
     private TextView tvSearch;
 
     private List<Service> servicesCatDocs;
+
+    // code cua SONPH
+    private ExpandableHeightListView lvRequestListDashboard;
+    private List<Request> requests;
 
 //    @Override
 //    public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,10 +87,12 @@ public class DashboardFragment extends Fragment {
         });
 
         // Connect to firebase
-        firebaseDb = FirebaseDb.makeDbRef("Services/docs");
+        firebaseDb = FirebaseDb.makeDbRef("Services/learns");
 
         gvServices = view.findViewById(R.id.gvServices);
         gvServices.setOnItemClickListener(serviceItemCLickDocs);
+
+        setUpRequestList(view);
 
         return view;
     }
@@ -121,7 +133,7 @@ public class DashboardFragment extends Fragment {
                     Service service = snapshot.getValue(Service.class);
                     // Add to list
                     servicesCatDocs.add(service);
-                    System.out.println(snapshot.getValue());
+                    //System.out.println(snapshot.getValue());
                 }
 
                 CategoryGridAdapter categoryDocsGridAdapter = new CategoryGridAdapter(getActivity(), servicesCatDocs);
@@ -134,5 +146,26 @@ public class DashboardFragment extends Fragment {
             }
         });
     }
+
+    private void setUpRequestList(View view) {
+        lvRequestListDashboard = view.findViewById(R.id.lvRequestListDashboard);
+        lvRequestListDashboard.setOnItemClickListener(requestItemClick);
+        // init list
+        requests = new ArrayList<>();
+
+        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
+        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
+        requests.add(new Request("1", "CB9WNML6", "25/12/2019", "Pending", "Note something", null));
+
+        RequestListAdapter adapter = new RequestListAdapter(getActivity(), requests);
+        lvRequestListDashboard.setAdapter(adapter);
+    }
+
+    private AdapterView.OnItemClickListener requestItemClick = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            //
+        }
+    };
 
 }

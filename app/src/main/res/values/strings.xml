@@ -19,4 +19,6 @@
     <string name="service_detail_description">Mô tả</string>
     <string name="cat_allowance">Trợ cấp</string>
     <string name="note">Ghi chú</string>
+    <string name="request_default_status">Đang xử lý</string>
+    <string name="request_default_time">19/12/2019</string>
 </resources>
