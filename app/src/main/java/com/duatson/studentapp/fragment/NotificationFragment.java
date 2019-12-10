@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duatson.studentapp.R;
+import static com.duatson.studentapp.R.*;
 
 
 /**
@@ -27,14 +27,14 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        View view = inflater.inflate(layout.fragment_notification, container, false);
         setUpTopToolBar(view);
         // Inflate the layout for this fragment
         return view;
     }
 
     private void setUpTopToolBar(View view) {
-        toolbar = view.findViewById(R.id.app_top_bar);
+        toolbar = view.findViewById(id.app_top_bar);
         toolbar.setNavigationOnClickListener(new Toolbar.OnClickListener() {
             @Override
             public void onClick(View v) {

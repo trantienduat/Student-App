@@ -1,6 +1,7 @@
 package com.duatson.studentapp.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.duatson.studentapp.MainActivity;
 import com.duatson.studentapp.NavigationHost;
@@ -24,6 +26,8 @@ import com.duatson.studentapp.R;
 import com.duatson.studentapp.RequestDetailFragment;
 import com.duatson.studentapp.adapter.CategoryGridAdapter;
 import com.duatson.studentapp.adapter.RequestListAdapter;
+import com.duatson.studentapp.adapter.SliderAdapter;
+import com.duatson.studentapp.adapter.ViewPaperAdapter;
 import com.duatson.studentapp.application.ExpandableHeightGridView;
 import com.duatson.studentapp.application.ExpandableHeightListView;
 import com.duatson.studentapp.model.Request;
@@ -34,6 +38,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,40 +50,36 @@ public class DashboardFragment extends Fragment {
     private DatabaseReference firebaseDb;
     private ExpandableHeightGridView gvServices;
     private TextView tvSearch;
+    private SliderView sliderView;
 
     private List<Service> servicesCatDocs;
 
-    // code cua SONPH
-    private ExpandableHeightListView lvRequestListDashboard;
+    private ListView lvRequestListDashboard;
     private List<Request> requests;
 
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setHasOptionsMenu(true);
-//    }
-//
-//    @Override
-//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.top_app_bar_menu_dashboard, menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//            if (id == R.id.icNotification) {
-//                NotificationFragment notificationFragment = new NotificationFragment();
-//                ((NavigationHost) getActivity()).navigateTo(notificationFragment, true);
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         setHasOptionsMenu(true);
+
+        sliderView = view.findViewById(R.id.imageSlider);
+
+        final SliderAdapter adapter = new SliderAdapter(getContext());
+        adapter.setCount(5);
+
+        sliderView.setSliderAdapter(adapter);
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+
+        sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
+            @Override
+            public void onIndicatorClicked(int position) {
+                sliderView.setCurrentPagePosition(position);
+            }
+        });
+
         tvSearch = view.findViewById(R.id.tvSearch);
         tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +95,7 @@ public class DashboardFragment extends Fragment {
         gvServices = view.findViewById(R.id.gvServices);
         gvServices.setOnItemClickListener(serviceItemCLickDocs);
 
-        setUpRequestList(view);
+//        setUpRequestList(view);
 
         return view;
     }
@@ -147,19 +150,19 @@ public class DashboardFragment extends Fragment {
         });
     }
 
-    private void setUpRequestList(View view) {
-        lvRequestListDashboard = view.findViewById(R.id.lvRequestListDashboard);
-        lvRequestListDashboard.setOnItemClickListener(requestItemClick);
-        // init list
-        requests = new ArrayList<>();
-
-        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
-        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
-        requests.add(new Request("1", "CB9WNML6", "25/12/2019", "Pending", "Note something", null));
-
-        RequestListAdapter adapter = new RequestListAdapter(getActivity(), requests);
-        lvRequestListDashboard.setAdapter(adapter);
-    }
+//    private void setUpRequestList(View view) {
+//        lvRequestListDashboard = view.findViewById(R.id.lvRequestListDashboard);
+//        lvRequestListDashboard.setOnItemClickListener(requestItemClick);
+//        // init list
+//        requests = new ArrayList<>();
+//
+//        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
+//        requests.add(new Request("1", "CB9WNML10", "25/12/2019", "Pending", "Note something", null));
+//        requests.add(new Request("1", "CB9WNML6", "25/12/2019", "Pending", "Note something", null));
+//
+//        RequestListAdapter adapter = new RequestListAdapter(getActivity(), requests);
+//        lvRequestListDashboard.setAdapter(adapter);
+//    }
 
     private AdapterView.OnItemClickListener requestItemClick = new AdapterView.OnItemClickListener() {
         @Override

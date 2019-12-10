@@ -1,168 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".RegisterServiceActivity"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-   >
+    tools:context=".RegisterServiceActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/bluePigment"
-        android:padding="8dp"
-        >
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            />
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="50dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="@string/register_service"
-            android:layout_margin="5dp"
-            android:textSize="30dp"
-            android:textColor="@color/whiteColor"
-            android:textAppearance="@style/NormalText"
-            >
-        </TextView>
-    </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/app_top_bar"
+                style="@style/Widget.StudentApp.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="45sp"
+                android:background="@color/primaryDarkColor"
+                android:elevation="8sp"
+                app:navigationIcon="@drawable/ic_arrow_back"
+                app:titleTextColor="@color/whiteColor">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="32sp"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:text="Đăng ký"
+                    android:textAppearance="@style/TitleText"
+                    android:textColor="@color/whiteColor" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">-->
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_marginTop="@dimen/grid_spacing"
-            app:cardUseCompatPadding="true"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/grid_spacing"
-            android:layout_marginRight="@dimen/grid_spacing"
-            >
+            android:backgroundTint="@color/whiteColor"
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                >
+                android:padding="@dimen/padding_medium">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_user_regis"
                         android:padding="8dp"
-                        />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cấp thẻ lại thẻ sinh viên"
-                    android:textSize="25dp"
-                    android:padding="8dp"
-                    android:textStyle="bold"
-                    />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_description"
-                        android:padding="8dp"
-                        />
+                        android:src="@drawable/ic_user_regis" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dành cho các bạn sinh viên làm mất hoặc muốn thay mới"
-                        android:textSize="18dp"
                         android:padding="8dp"
-                        android:textStyle="bold"
-                        />
+                        android:text="Cấp thẻ lại thẻ sinh viên"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_money"
                         android:padding="8dp"
-                        />
-                <TextView
+                        android:src="@drawable/ic_description" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Dành cho các bạn sinh viên làm mất hoặc muốn thay mới"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Phí dịch vụ: 50.000 đ"
-                    android:textSize="18dp"
-                    android:padding="8dp"
-                    android:textStyle="bold"
-                    />
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_money" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="Phí dịch vụ: 50.000 đ"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/grid_spacing"
-        android:layout_marginRight="@dimen/grid_spacing"
-        android:layout_marginTop="@dimen/grid_spacing"
-        app:cardUseCompatPadding="true"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/whiteColor"
-        >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-        >
-        <ImageView
-            android:id="@+id/imgAttachFile"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_archive"
-            />
-        <TextView
-            android:id="@+id/txtDirectory"
-            android:layout_margin="10dp"
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            />
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="@string/note"
-            android:layout_marginTop="20dp">
-            <com.google.android.material.textfield.TextInputEditText
+            android:backgroundTint="@color/whiteColor">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minWidth="300dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="20dp"
+                android:orientation="vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="@string/send"
-            app:iconGravity="end"
-            app:icon="@drawable/ic_send"/>
+                <ImageView
+                    android:id="@+id/imgAttachFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_archive" />
+
+                <TextView
+                    android:id="@+id/txtDirectory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="18dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/note">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minWidth="300dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="@string/send"
+                    app:icon="@drawable/ic_send"
+                    app:iconGravity="end" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!--        </ScrollView>-->
     </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</LinearLayout>
+
+</FrameLayout>

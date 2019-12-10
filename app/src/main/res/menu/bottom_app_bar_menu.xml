@@ -13,6 +13,12 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/icHistory"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="Lịch Sử"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/icProfile"
         android:icon="@drawable/ic_account_circle_outlined_24px"
         android:title="Cá Nhân"

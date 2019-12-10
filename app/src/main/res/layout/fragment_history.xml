@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.NotificationFragment">
+    tools:context=".fragment.HistoryFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                     android:layout_height="32sp"
                     android:layout_marginLeft="@dimen/margin_medium"
                     android:layout_marginRight="@dimen/margin_medium"
-                    android:text="Thông báo"
+                    android:text="Lịch sử"
                     android:textAppearance="@style/TitleText"
                     android:textColor="@color/whiteColor" />
             </androidx.appcompat.widget.Toolbar>

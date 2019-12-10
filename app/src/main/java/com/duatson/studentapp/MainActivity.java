@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.duatson.studentapp.fragment.DashboardFragment;
+import com.duatson.studentapp.fragment.NotificationFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost {
 
@@ -58,4 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost {
         super.onBackPressed();
     }
 
+    public void clickToNotification(MenuItem item) {
+        this.navigateTo(new NotificationFragment(), true);
+    }
 }

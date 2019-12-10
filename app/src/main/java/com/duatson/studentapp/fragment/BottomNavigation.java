@@ -58,6 +58,9 @@ public class BottomNavigation extends Fragment {
                 case R.id.icSearch:
                     navigationHost.navigateTo(new ServicesListFragment(), true);
                     return true;
+                case R.id.icHistory:
+                    navigationHost.navigateTo(new HistoryFragment(), true);
+                    return true;
             }
 
             return false;
